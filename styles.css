@@ -1,0 +1,299 @@
+:root {
+  color-scheme: light;
+  --ink: #1c1915;
+  --muted: #4e493f;
+  --line: #d8d2c6;
+  --paper: #f4f1ea;
+  --card: #fffcf8;
+  --accent: #1e3a5f;
+  --focus: #0b57d0;
+  --warn: #f3ecda;
+  --danger: #7f1d1d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Candara, Calibri, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+}
+
+.skip:focus {
+  top: 0.75rem;
+}
+
+.banner,
+main,
+.about {
+  width: min(52rem, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.banner {
+  padding: 2rem 0 0.5rem;
+}
+
+.kicker {
+  margin: 0 0 0.35rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0 0 0.6rem;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.35rem;
+}
+
+.lede,
+.hint,
+.about p,
+.note {
+  color: var(--muted);
+}
+
+.panel,
+.district,
+.place,
+.note {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.panel {
+  margin: 1rem 0;
+  padding: 1rem 1rem 1.1rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.entry {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #8d877c;
+  border-radius: 4px;
+  background: #fff;
+}
+
+input {
+  flex: 1 1 12rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+input[type="checkbox"] {
+  width: 1.15rem;
+  min-height: 1.15rem;
+  margin-top: 0.25rem;
+  letter-spacing: 0;
+  text-transform: none;
+  flex: 0 0 auto;
+}
+
+.extra-toggle label {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  font-weight: 600;
+}
+
+select {
+  margin-bottom: 0.75rem;
+}
+
+button {
+  min-height: 2.75rem;
+  padding: 0.45rem 1rem;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #16304f;
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.hint,
+.error,
+.note,
+.district,
+.place {
+  margin-top: 0.75rem;
+}
+
+.error {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.note {
+  padding: 0.9rem 1rem;
+  background: var(--warn);
+}
+
+.note p:first-child,
+.district p:first-child,
+.place p:first-child {
+  margin-top: 0;
+}
+
+.note p:last-child,
+.district p:last-child {
+  margin-bottom: 0;
+}
+
+.district,
+.place {
+  padding: 0.9rem 1rem 1rem;
+}
+
+.share {
+  margin: 0.2rem 0 0.8rem;
+  color: var(--muted);
+}
+
+.place h5 {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.type {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+}
+
+.addr {
+  margin: 0.15rem 0 0.6rem;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.45rem 1rem;
+  margin: 0;
+}
+
+dt {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+dd {
+  margin: 0;
+}
+
+details {
+  margin-top: 0.7rem;
+}
+
+summary {
+  cursor: pointer;
+}
+
+.group + .group {
+  margin-top: 1rem;
+}
+
+.group h4 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.about {
+  padding: 0.5rem 0 2.5rem;
+  font-size: 0.95rem;
+}
+
+.about h2 {
+  font-size: 1.15rem;
+}
+
+.about ul {
+  padding-left: 1.15rem;
+}
+
+a {
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}
+
+p,
+li,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 36rem) {
+  h1 {
+    font-size: 1.65rem;
+  }
+
+  .entry button {
+    width: 100%;
+  }
+}

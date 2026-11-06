@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%231e3a5f'/%3E%3C/svg%3E" />
+    <title>British Columbia polling place lookup</title>
+    <meta
+      name="description"
+      content="Unofficial lookup of Elections BC voting places for electoral districts that overlap a British Columbia postal code’s census forward sortation area."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#result">Skip to results</a>
+    <header class="banner">
+      <p class="kicker">Unofficial public lookup</p>
+      <h1>British Columbia polling places</h1>
+      <p class="lede">
+        Enter a Canadian postal code to see the official 2026 provincial election voting places
+        Elections BC recorded for electoral districts that overlap that code’s census forward
+        sortation area.
+      </p>
+    </header>
+    <main>
+      <form id="lookup-form" class="panel">
+        <label for="postal">Canadian postal code</label>
+        <div class="entry">
+          <input
+            id="postal"
+            name="postal"
+            type="text"
+            inputmode="text"
+            autocomplete="postal-code"
+            spellcheck="false"
+            autocapitalize="characters"
+            maxlength="7"
+            placeholder="V6B 1A1"
+            aria-describedby="postal-hint postal-error"
+          />
+          <button type="submit">Look up</button>
+        </div>
+        <p id="postal-hint" class="hint">
+          Example of the format: V6B 1A1. The last three characters are checked for format only.
+          Open data does not link a full postal code to one voting area.
+        </p>
+        <p id="postal-error" class="error" role="alert" hidden></p>
+      </form>
+
+      <section id="result" tabindex="-1" aria-live="polite"></section>
+
+      <section class="panel" aria-labelledby="browse-heading">
+        <h2 id="browse-heading">Browse by electoral district</h2>
+        <p class="hint">
+          This list is taken directly from the voting-place table. It does not use a postal code
+          or a boundary overlay.
+        </p>
+        <label for="district">Electoral district</label>
+        <select id="district">
+          <option value="" selected>Select an electoral district</option>
+        </select>
+        <div id="district-result"></div>
+      </section>
+    </main>
+    <footer id="about" class="about"></footer>
+    <noscript>
+      <p class="panel">This lookup needs JavaScript to search the packaged voting-place file.</p>
+    </noscript>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
